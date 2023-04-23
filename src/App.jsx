@@ -40,7 +40,7 @@ export default function App() {
         loop={true}
         navigation
       >
-        {games.map((cover) => (
+        {games.slice(0, 10).map((cover) => (
           <SwiperSlide key={cover.id}>
             <img src={`https://firebasestorage.googleapis.com/v0/b/arandevs-a4605.appspot.com/o/hoo-play%2Fimagenes%2Fjuegos%2Fposter%2F${cover.id}.jpg?alt=media&token=47065a24-8b97-4b14-9aae-17168b675d7e`} />
           </SwiperSlide>
