@@ -1,0 +1,12 @@
+.MuiPaper-root.MuiAppBar-root {
+    background-color: #121212;
+}
+
+ion-icon {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.logo {
+    width: 120px;
+}

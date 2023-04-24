@@ -19,8 +19,6 @@ body {
 
 .swiper {
   width: 100%;
-  margin-top: 100px;
-  padding-bottom: 40px;
 }
 
 .swiper-slide {
@@ -32,4 +30,18 @@ body {
 .swiper-slide img {
   display: block;
   width: 100%;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.genre {
+  text-transform: uppercase;
+}
+
+.MuiButtonBase-root.MuiButton-root.play-btn {
+  background-color: #232323;
 }
