@@ -64,23 +64,21 @@ const Games = () => {
         </Swiper>
       </Box>
       <Container sx={{ marginTop: 8 }}>
-        <Box sx={{ textAlign: "center", marginBottom: 5 }}>
+        <Box sx={{ textAlign: "center", marginBottom: 1 }}>
           <Typography className="title" variant="h6" color={'#fff'}>
             {moviesGenre[count].title}
           </Typography>
         </Box>
+        <Box sx={{ textAlign: "center", marginBottom: 5 }}>
+          <Typography className="title" variant="subtitle" color={'#fff'}>
+           {moviesGenre[count].year}
+          </Typography>
+        </Box>
         <Grid container spacing={1}>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <Box sx={{ textAlign: 'center' }}>
-              <Button size="large" fullWidth={true} className="play-btn" href={`go:${moviesGenre[count].id}`} variant="contained" color="primary">
-                <ion-icon name="game-controller"></ion-icon> &nbsp; PLAY
-              </Button>
-            </Box>
-          </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ textAlign: 'center' }}>
-              <Button size="large" fullWidth={true} className="play-btn" href={moviesGenre[count].trailer} variant="contained" color="primary">
-                <ion-icon name="download"></ion-icon> &nbsp; TRAILER
+              <Button size="large" fullWidth={false} className="play-btn" href={`go:${moviesGenre[count].id}`} variant="contained" color="primary">
+                <ion-icon name="play-circle-outline"></ion-icon> &nbsp; VER AHORA
               </Button>
             </Box>
           </Grid>
