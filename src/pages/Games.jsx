@@ -72,7 +72,7 @@ const Games = () => {
         <Grid container spacing={1}>
           <Grid item xs={6}>
             <Box sx={{ textAlign: 'center' }}>
-              <Button size="large" fullWidth={true} className="play-btn" href={moviesGenre[count].id} variant="contained" color="primary">
+              <Button size="large" fullWidth={true} className="play-btn" href={`go:${moviesGenre[count].id}`} variant="contained" color="primary">
                 <ion-icon name="game-controller"></ion-icon> &nbsp; PLAY
               </Button>
             </Box>
