@@ -28,10 +28,10 @@ const Games = () => {
     <>
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton sx={{ mr: 2 }} onClick={backButton}>
-            <ion-icon name="chevron-back"></ion-icon>
+          <IconButton sx={{ mr: 5 }} onClick={backButton}>
+            <ion-icon name="chevron-back" size='large'></ion-icon>
           </IconButton>
-          <Typography className="genre" variant="subtitle1">
+          <Typography className="genre" variant="h6">
             {gamesGenre[0].genre} GAMES
           </Typography>
         </Toolbar>
@@ -58,7 +58,7 @@ const Games = () => {
         >
           {gamesGenre.map((cover) => (
             <SwiperSlide key={cover.id}>
-              <img src={`https://firebasestorage.googleapis.com/v0/b/arandevs-a4605.appspot.com/o/hoo-play%2Fimagenes%2Fjuegos%2Fposter%2F${cover.id}.jpg?alt=media&token=47065a24-8b97-4b14-9aae-17168b675d7e`} />
+              <img className="cover-img" src={`https://firebasestorage.googleapis.com/v0/b/arandevs-a4605.appspot.com/o/hoo-play%2Fimagenes%2Fjuegos%2Fposter%2F${cover.id}.jpg?alt=media&token=47065a24-8b97-4b14-9aae-17168b675d7e`} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -93,7 +93,7 @@ const Games = () => {
 export default Games
 
 export const loaderGamesGenre = async ({ params }) => {
-  const res = await fetch(`https://api-retro-game.azurewebsites.net/api/games/game-boy-advance/${params.genre}`)
+  const res = await fetch(`https://befitting-jail-production.up.railway.app/api/games/game-boy-advance/${params.genre}`)
 
   const gamesGenre = await res.json()
 

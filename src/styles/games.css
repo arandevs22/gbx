@@ -45,3 +45,7 @@ body {
 .MuiButtonBase-root.MuiButton-root.play-btn {
   background-color: #232323;
 }
+
+.cover-img{
+  border-radius: 16px;
+}
