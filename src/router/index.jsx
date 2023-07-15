@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import LayOutPublic from "../layout/LayOutPublic";
 import Home from "../pages/Home";
-import Games, { loaderGamesGenre } from "../pages/Games";
+import Games, { loaderMoviesGenre } from "../pages/Games";
 
 export const router = createBrowserRouter([
     {
@@ -13,9 +13,9 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/games/:genre',
+                path: '/movies/:genre',
                 element: <Games />,
-                loader: loaderGamesGenre
+                loader: loaderMoviesGenre
             }
         ]
     }

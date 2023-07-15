@@ -12,7 +12,7 @@ const Offset = styled('div')(({ theme }) => theme.mixins.toolbar)
 
 const Games = () => {
 
-  const { gamesGenre } = useLoaderData()
+  const { moviesGenre } = useLoaderData()
 
   const [count, setCount] = useState(0)
 
@@ -32,7 +32,7 @@ const Games = () => {
             <ion-icon name="chevron-back" size='large'></ion-icon>
           </IconButton>
           <Typography className="genre" variant="h6">
-            {gamesGenre[0].genre} GAMES
+            Peliculas {moviesGenre[0].genre}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -56,9 +56,9 @@ const Games = () => {
           loop={true}
           navigation
         >
-          {gamesGenre.map((cover) => (
+          {moviesGenre.map((cover) => (
             <SwiperSlide key={cover.id}>
-              <img className="cover-img" src={`https://firebasestorage.googleapis.com/v0/b/arandevs-a4605.appspot.com/o/hoo-play%2Fimagenes%2Fjuegos%2Fposter%2F${cover.id}.jpg?alt=media&token=47065a24-8b97-4b14-9aae-17168b675d7e`} />
+              <img className="cover-img" src={`https://image.tmdb.org/t/p/w300/${cover.poster_path}`} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -66,21 +66,21 @@ const Games = () => {
       <Container sx={{ marginTop: 8 }}>
         <Box sx={{ textAlign: "center", marginBottom: 5 }}>
           <Typography className="title" variant="h6" color={'#fff'}>
-            {gamesGenre[count].title}
+            {moviesGenre[count].title}
           </Typography>
         </Box>
         <Grid container spacing={1}>
           <Grid item xs={6}>
             <Box sx={{ textAlign: 'center' }}>
-              <Button size="large" fullWidth={true} className="play-btn" href={gamesGenre[count].reference} variant="contained" color="primary">
-                <ion-icon name="game-controller"></ion-icon> &nbsp; JUGAR
+              <Button size="large" fullWidth={true} className="play-btn" href={moviesGenre[count].id} variant="contained" color="primary">
+                <ion-icon name="game-controller"></ion-icon> &nbsp; PLAY
               </Button>
             </Box>
           </Grid>
           <Grid item xs={6}>
             <Box sx={{ textAlign: 'center' }}>
-              <Button size="large" fullWidth={true} className="play-btn" href={gamesGenre[count].rom} variant="contained" color="primary">
-                <ion-icon name="download"></ion-icon> &nbsp; ROM
+              <Button size="large" fullWidth={true} className="play-btn" href={moviesGenre[count].trailer} variant="contained" color="primary">
+                <ion-icon name="download"></ion-icon> &nbsp; TRAILER
               </Button>
             </Box>
           </Grid>
@@ -92,10 +92,10 @@ const Games = () => {
 
 export default Games
 
-export const loaderGamesGenre = async ({ params }) => {
-  const res = await fetch(`https://befitting-jail-production.up.railway.app/api/games/game-boy-advance/${params.genre}`)
+export const loaderMoviesGenre = async ({ params }) => {
+  const res = await fetch(`https://api-retro-game-b8cce30f0948.herokuapp.com/api/movies/genre/${params.genre}`)
 
-  const gamesGenre = await res.json()
+  const moviesGenre = await res.json()
 
-  return { gamesGenre }
+  return { moviesGenre }
 }
